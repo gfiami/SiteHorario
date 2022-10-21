@@ -1,12 +1,16 @@
 var data = new Date();
 var semana = data.getDay();
 var horas;
+
 function definirHorario(horario) {
+  if (typeof horario != "number") {
+    horario = data.getHours();
+  }
   horas = parseInt(horario);
   main();
 }
 definirHorario(data.getHours());
-globalThis.definirHorario = definirHorario;
+globalThis.definirHorario = definirHorario; //usar no console como globalThis.definirHorario(horarioDesejado)
 
 function main() {
   var semanaEscrito;
